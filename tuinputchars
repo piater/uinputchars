@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for out in "$@"; do
+    echo $out | sudo ./uinputchars
+    read in
+    if [ $in != $out ]; then
+	echo "$out != $in"
+    fi
+done
