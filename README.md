@@ -32,6 +32,9 @@ via command-line options.
 
 ## Installation
 
-Under Linux, just run (GNU) <kbd>make</kbd>, and move or link the
+Arch Linux users can install from the
+[AUR](https://aur.archlinux.org/packages/uinputchars/).
+
+Generally under Linux, just run (GNU) <kbd>make</kbd>, and move or link the
 resulting executable to wherever you want.  If this does not work, I
 welcome your patches.
