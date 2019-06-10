@@ -17,17 +17,26 @@ Character strings are read from standard input.  There is currently no
 option to pass them on the command line because this would make them
 appear in the process table.
 
-The current implementation only accepts ISO-8859-1 characters (encoded
-as specified by the locale).  Depending on the kernel keymap in use,
-only a subset of them may be accessible.
 
-The uinputchars utility needs to retrieve the kernel keymap and to
-write into `/dev/uinput`; both will generally require root rights.  It
-is recommended to configure this in `/etc/sudoers`.
+### Notes
 
-Applications receiving events from `/dev/uinput` must be given time to
-process them.  This is achieved by brief sleeps that can be adjusted
-via command-line options.
+  * Applications receiving events from `/dev/uinput` must be given
+	time to process them.  This is achieved by brief sleeps that can
+	be adjusted via command-line options.
+
+  * The current implementation only accepts ISO-8859-1 characters
+	(encoded as specified by the locale).  Depending on the kernel
+	keymap in use, only a subset of them may be accessible.
+
+  * The uinputchars utility needs to retrieve the kernel keymap and to
+	write into `/dev/uinput`; both will generally require root rights.
+	It is recommended to configure this in `/etc/sudoers`.
+
+  * The `uinput` device is not the same as the real keyboard and may
+	have a different keymap associated with it.	 For example, in
+	[sway](https://github.com/swaywm/sway), configure all inputs to
+	use the same keymap (e.g., `input "*" xkb_layout de`), not just
+	the actual keyboard, to include `/dev/uinput`.
 
 
 ## Installation
