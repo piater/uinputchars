@@ -24,19 +24,24 @@ appear in the process table.
 	time to process them.  This is achieved by brief sleeps that can
 	be adjusted via command-line options.
 
+  * This utility reads the console keymap (as activated with
+	loadkeys).  Thus, to work as expected, this should match the
+	keyboard layout used by the desktop environment, if any (under
+	Wayland or X).
+
+	In particular, the `uinput` device is not the same as the real
+	keyboard and may have a different keymap associated with it.  For
+	example, in [sway](https://github.com/swaywm/sway), configure all
+	inputs to use the same keymap (e.g., `input "*" xkb_layout de`),
+	not just the actual keyboard, to include `/dev/uinput`.
+
   * The current implementation only accepts ISO-8859-1 characters
-	(encoded as specified by the locale).  Depending on the kernel
+	(encoded as specified by the locale).  Depending on the console
 	keymap in use, only a subset of them may be accessible.
 
-  * The uinputchars utility needs to retrieve the kernel keymap and to
-	write into `/dev/uinput`; both will generally require root rights.
-	It is recommended to configure this in `/etc/sudoers`.
-
-  * The `uinput` device is not the same as the real keyboard and may
-	have a different keymap associated with it.	 For example, in
-	[sway](https://github.com/swaywm/sway), configure all inputs to
-	use the same keymap (e.g., `input "*" xkb_layout de`), not just
-	the actual keyboard, to include `/dev/uinput`.
+  * Retrieving the console keymap and writing into `/dev/uinput` will
+	generally require root rights. It is recommended to configure this
+	in `/etc/sudoers`.
 
 
 ## Installation

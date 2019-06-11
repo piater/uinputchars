@@ -10,9 +10,9 @@ highly-simplified descriptions:
   character string.  On modern, western systems, a typical character
   encoding is UTF-8.
 
-- Kernel Keymap: Each key on the keyboard has an associated Keycode
+- Console Keymap: Each key on the keyboard has an associated Keycode
   (or Event Code, defined as KEY_... macros in
-  linux/input-event-codes.h).  The Kernel Keymap maps a Keycode (or a
+  linux/input-event-codes.h).  The Console Keymap maps a Keycode (or a
   combination of Keycodes, if modifier or compose keys are pressed) to
   an Action Code representing a character (or some other action,
   defined as K_... macros in linux/keyboard.h).  This mapping is
