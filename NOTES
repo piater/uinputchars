@@ -19,15 +19,15 @@ highly-simplified descriptions:
   determined by the active keymap (as loaded by the loadkeys utility).
 
 - The mapping from Action Code to characters is quite complicated and
-  can be traced in dumpkeys utility.  It appears that for ISO-8859-1
-  characters (0..255), the lower byte of the Action Code equals the
-  ISO-8859-1 (= UTF-8) character code.
+  can be traced in the dumpkeys utility.  It appears that for
+  ISO-8859-1 characters (0..255), the lower byte of the Action Code
+  equals the ISO-8859-1 (= UTF-8) character code.
 
   Thus, for ISO-8859-1 characters, this mapping is essentially the
   identity mapping.  This is all this program implements so far;
   therefore, it is currently limited to ISO-8859-1 characters.
 
-  Generally, the Action Code of a character appear to be closely
+  Generally, the Action Code of a character appears to be closely
   related to their Unicode code point.
 
 To enter a character via /dev/uinput, a corresponding sequence of
