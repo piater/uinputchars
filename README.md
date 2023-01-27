@@ -2,6 +2,19 @@
 A Linux utility to type character strings into `/dev/uinput`
 
 
+## Abandonment/Deprecation Notice
+
+I recently stumbled upon [wtype](https://github.com/atx/wtype), which
+first appeared on GitHub just after I created uinputchars. For my only
+use case typing credentials into various programs running under
+Wayland, this is a much better tool – no need for special permissions,
+inverse keymaps, or milli-sleeps. It works flawlessly as a drop-in
+replacement for uinputchars.
+
+Thus I declare uinputchars dormant and discourage its use (unless it
+solves a problem that xdotool/wtype cannot solve for you).
+
+
 ## Usage
 
 A typical use case is [entering
